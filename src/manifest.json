@@ -1,0 +1,33 @@
+{
+  "compatibleVersion": 3,
+  "name": "Snatch",
+  "description": "Snatch, upload layer to cdn directly, improve work efficiency.",
+  "author": "chenzhicheng.com",
+  "version": "0.1.0",
+  "identifier": "com.chenzhicheng.snatch",
+  "bundleVersion": 1,
+  "icon": "icon.png",
+  "commands": [
+    {
+      "name": "Upload Select",
+      "identifier": "snaptchSelect",
+      "shortcut": "ctrl command p",
+      "script": "./snatch.js",
+      "handler" : "uploadSelect"
+    },
+    {
+      "script" : "./snatch.js",
+      "handler" : "setting",
+      "name" : "Set Server URL",
+      "identifier" : "serverUrl"
+    }
+  ],
+  "menu": {
+    "title": "Snatch",
+    "items": [
+      "snaptchSelect",
+      "-",
+      "serverUrl"
+    ]
+  }
+}
