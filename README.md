@@ -12,7 +12,7 @@ Uncompress the downloaded ZIP package, then run the file snatch.sketchplugin to 
 
 You may need restart the Sketch to after installed.
 
-*** Notice: to use this plugin, you need to run the backend. Here is a simple [demo](https://github.com/ZhichengChen/snatch#backend). ***
+*Notice: to use this plugin, you need to run the backend. Here is a simple [demo](https://github.com/ZhichengChen/snatch-server).*
 
 ## Development
 
