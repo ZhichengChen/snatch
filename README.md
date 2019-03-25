@@ -4,6 +4,16 @@ A [Sketch] plugin that upload layer to CDN directly.
 
 Contributions are welcome!
 
+## Install
+
+Download Snatch latest version >> [Download](https://github.com/ZhichengChen/snatch/releases/latest)
+
+Uncompress the downloaded ZIP package, then run the file snatch.sketchplugin to install
+
+You may need restart the Sketch to after installed.
+
+*** Notice: to use this plugin, you need to run the backend. Here is a simple [demo](https://github.com/ZhichengChen/snatch#backend). ***
+
 ## Development
 
 _This plugin was created using `skpm`. For a detailed explanation on how things work, checkout the [skpm Readme](https://github.com/skpm/skpm/blob/master/README.md)._
