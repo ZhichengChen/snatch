@@ -1,0 +1,405 @@
+<meta charset='utf-8' />
+<style>
+  body {
+    background: white;
+    text-align: center;
+    padding: 12px;
+  }
+
+  h1 {
+    font-size: 20px;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(102, 102, 102, 1);
+    line-height: 28px;
+    padding: 12px;
+  }
+
+  select {
+    width: 322px;
+    height: 44px;
+    border-radius: 10px;
+    border: 1px solid rgba(186, 201, 225, 1);
+    padding: 12px;
+  }
+
+  .select-css {
+    display: block;
+    font-size: 16px;
+    color: #444;
+    box-sizing: border-box;
+    margin: 0 auto;
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, .04);
+    appearance: none;
+    background-color: #fff;
+    -webkit-appearance: none;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+      linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+  }
+
+  .select-css::-ms-expand {
+    display: none;
+  }
+
+  .select-css:hover {
+    border-color: #888;
+  }
+
+  .select-css:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222;
+    outline: none;
+  }
+
+  .select-css option {
+    font-weight: normal;
+  }
+
+  button {
+    padding: 12px;
+    width: 322px;
+    height: 44px;
+    background: rgba(247, 175, 71, 1);
+    border-radius: 10px;
+    border: 2px solid rgba(233, 160, 54, 1);
+    margin-top: 25px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 1);
+    line-height: 20px;
+    display: block;
+    margin: 25px auto;
+  }
+
+  p {
+    position: absolute;
+    font-size: 16px;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(170, 170, 170, 1);
+    line-height: 22px;
+    bottom: 10px;
+    width: 250px;
+    left: 50%;
+    margin-left: -125px;
+  }
+
+  .angled-135 {
+    background-color: rgba(247, 175, 71, 1);
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%,
+      color-stop(.25, rgba(255, 255, 255, .2)), color-stop(.25, transparent),
+      color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .2)),
+      color-stop(.75, rgba(255, 255, 255, .2)), color-stop(.75, transparent),
+      to(transparent));
+    background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+      transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+      transparent 75%, transparent);
+    background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+      transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+      transparent 75%, transparent);
+    background-image: linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+      transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+      transparent 75%, transparent);
+  }
+
+  .stripes {
+    -webkit-background-size: 50px 50px;
+    -moz-background-size: 50px 50px;
+    background-size: 50px 50px;
+    /* 控制条纹的大小 */
+    -moz-box-shadow: 1px 1px 8px gray;
+    -webkit-box-shadow: 1px 1px 8px gray;
+    box-shadow: 1px 1px 8px gray;
+    animation: animatedBackground 10s linear infinite;
+  }
+
+  @keyframes animatedBackground {
+    from {
+      background-position: 0 0;
+    }
+
+    to {
+      background-position: 100% 0;
+    }
+  }
+
+  .red {
+    color: rgba(213, 100, 100, 1);
+  }
+
+  .loading {
+    background: #aa4f80;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .messages {
+    overflow: scroll;
+    height: 250px;
+    top: 15px;
+    position: absolute;
+    z-index: 2;
+    background: white;
+    display: none;
+    width: 92%;
+  }
+
+  .messages svg {
+    position: fixed;
+    bottom: 13px;
+    left: 19px;
+  }
+
+  ul {
+    list-style: none;
+    text-align: left;
+    margin-top: 0;
+  }
+
+  ul li a {
+    background: rgba(255, 255, 255, .5);
+  }
+
+  p a {
+    color: #FF5E3A;
+  }
+</style>
+<h1 id="h1">Please Select Project to Upload</h1>
+<select class="select-css" id="select" onchange="getComboA(this)">
+  <option>===Please Select===</option>
+</select>
+<button id="reUpload" onclick="reUploadAll()" style="display: none;">REUPLOAD</button>
+<button id="btn" onclick="trigger()">UPLOAD</button>
+<div class="messages" id="messages">
+  <svg t="1559035088677" class="icon" style="" viewBox="0 0 1084 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+    p-id="1094" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" onclick="hideMessage()">
+    <defs>
+      <style type="text/css"></style>
+    </defs>
+    <path
+      d="M254.555203 512 642.784245 117.480071 525.695473 0.0301 15.11017 512 525.695473 1023.9699 642.784245 906.519929Z"
+      p-id="1095"></path>
+  </svg>
+  <ul id="missing">
+    <h1>Why show this message?</h1>
+    <li>We can't read message from server. Please go to https://github.com/ZhichengChen/snatch-server read more.</li>
+  </ul>
+</div>
+<p id="p"><span id="finding">0</span> layers selected <a onClick="showMessage()">Show Missing</a></p>
+<div class="loading" id="loading">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="64" height="64" fill="white">
+    <circle cx="16" cy="3" r="0">
+      <animate attributeName="r" values="0;3;0;0" dur="1s" repeatCount="indefinite" begin="0"
+        keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" calcMode="spline" />
+    </circle>
+    <circle transform="rotate(45 16 16)" cx="16" cy="3" r="0">
+      <animate attributeName="r" values="0;3;0;0" dur="1s" repeatCount="indefinite" begin="0.125s"
+        keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" calcMode="spline" />
+    </circle>
+    <circle transform="rotate(90 16 16)" cx="16" cy="3" r="0">
+      <animate attributeName="r" values="0;3;0;0" dur="1s" repeatCount="indefinite" begin="0.25s"
+        keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" calcMode="spline" />
+    </circle>
+    <circle transform="rotate(135 16 16)" cx="16" cy="3" r="0">
+      <animate attributeName="r" values="0;3;0;0" dur="1s" repeatCount="indefinite" begin="0.375s"
+        keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" calcMode="spline" />
+    </circle>
+    <circle transform="rotate(180 16 16)" cx="16" cy="3" r="0">
+      <animate attributeName="r" values="0;3;0;0" dur="1s" repeatCount="indefinite" begin="0.5s"
+        keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" calcMode="spline" />
+    </circle>
+    <circle transform="rotate(225 16 16)" cx="16" cy="3" r="0">
+      <animate attributeName="r" values="0;3;0;0" dur="1s" repeatCount="indefinite" begin="0.625s"
+        keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" calcMode="spline" />
+    </circle>
+    <circle transform="rotate(270 16 16)" cx="16" cy="3" r="0">
+      <animate attributeName="r" values="0;3;0;0" dur="1s" repeatCount="indefinite" begin="0.75s"
+        keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" calcMode="spline" />
+    </circle>
+    <circle transform="rotate(315 16 16)" cx="16" cy="3" r="0">
+      <animate attributeName="r" values="0;3;0;0" dur="1s" repeatCount="indefinite" begin="0.875s"
+        keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" calcMode="spline" />
+    </circle>
+    <circle transform="rotate(180 16 16)" cx="16" cy="3" r="0">
+      <animate attributeName="r" values="0;3;0;0" dur="1s" repeatCount="indefinite" begin="0.5s"
+        keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" calcMode="spline" />
+    </circle>
+  </svg>
+</div>
+<script>
+  var url;
+  var status = 0;//0 normal 1 uploading 2 success 3 statics
+  var timeout;
+  var roasts;
+  var uploaded = 0;
+  var selectLayers = [];
+  var project;
+  function trigger() {
+    switch (status * 1) {
+      case 0:
+        {
+          upload();
+          break;
+        }
+      case 1:
+        {
+          stop();
+          break;
+        }
+      case 2:
+        {
+          view();
+          break;
+        }
+      case 3:
+        {
+          stop();
+          break;
+        }
+    }
+  }
+  function upload() {
+    if (!finding[uploaded]) {
+      status = 2;
+      show();
+      return;
+    }
+    if (status===2) {
+      show();
+      return;
+    }
+    window.postMessage('nativeLog', finding[uploaded], project);
+    status = 1;
+    document.getElementById('btn').setAttribute('class', 'angled-135 stripes');
+    document.getElementById('select').setAttribute('style', '');
+    document.getElementById('reUpload').setAttribute('style', 'display:none');
+    document.getElementById('btn').innerText = 'STOP';
+    document.getElementById('p').innerText = 'Uploading...';
+    document.getElementById('h1').innerText = uploaded++ + '/' + finding.length;;
+  }
+  function stop() {
+    uploaded = 0;
+    document.getElementById('h1').setAttribute('class', '');
+    status = 2;
+    document.getElementById('btn').setAttribute('class', '');
+    document.getElementById('select').setAttribute('style', '');
+    document.getElementById('reUpload').setAttribute('style', 'display:none');
+    document.getElementById('btn').innerText = 'UPLOAD';
+    document.getElementById('p').innerHTML = '<span id="finding">'+ finding.length +'</span> layers selected <a onClick = "showMessage()"> Show Missing</a>';
+    document.getElementById('h1').innerText = 'Please Select Project to Upload';
+  }
+  function show() {
+    document.getElementById('btn').setAttribute('class', '');
+    document.getElementById('h1').setAttribute('class', '');
+    document.getElementById('btn').innerText = 'VIEW';
+    document.getElementById('p').innerText = uploaded - failing.length + ' layers have uploaded';
+    document.getElementById('h1').innerText = 'Upload Success';
+  }
+  function view() {
+    status = 3;
+    document.getElementById('h1').setAttribute('class', 'red');
+    document.getElementById('select').setAttribute('style', 'display:none');
+    if (failing.length) {
+      document.getElementById('reUpload').setAttribute('style', '');
+    }
+    document.getElementById('btn').innerText = 'BACK';
+    document.getElementById('p').innerText = '';
+    document.getElementById('h1').innerText = uploaded- failing.length + ' layers upload success, '+ failing.length +' layers upload failed';
+  }
+  function reUploadAll() {
+    uploaded = 0;
+    finding = failing;
+    failing = [];
+    upload();
+  }
+  window.sendLayer = function (layers) {
+    selectLayers = layers;
+  }
+  window.sendUrl = function (url) {
+    fetch(url + '/')
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (myJson) {
+        document.getElementById('loading').setAttribute('style', 'display:none;')
+        var sel = document.getElementById('select');
+        roasts = myJson;
+        for (var i = 0; i < myJson.length; i++) {
+          var opt = document.createElement('option');
+          opt.appendChild(document.createTextNode(myJson[i].title || myJson[i].id));
+          opt.value = myJson[i].id;
+          sel.appendChild(opt);
+        }
+      })
+      .catch(function (err) {
+        console.log(err);
+        showMessage();
+      });
+  }
+  window.uploadSuccess = function () {
+    upload();
+  }
+  window.uploadFail = function () {
+    failing.push(finding[uploaded]);
+    upload();
+  }
+
+  var missing = [];
+  var finding = [];
+  var failing = [];
+  function getComboA(selectObject) {
+    missing = [];
+    finding = [];
+    var value = selectObject.value;
+    project = value;
+    for (var i = 0; i < roasts.length; i++) {
+      if (roasts[i].id === value) {
+        Object.keys(roasts[i]).forEach(function (key) {
+          var findIt = false;
+          if (key.indexOf('png') !== -1) {
+            for (var j = 0; j < selectLayers.length; j++) {
+              if (selectLayers[j].replace(/\./g, '_').replace(/ /g, '_') + '_png' === key) {
+                findIt = true;
+                finding.push(selectLayers[j]);
+                break;
+              }
+            }
+            if (!findIt) {
+              missing.push([key, roasts[i][key]]);
+            }
+          }
+        });
+        var li = '';
+        for (var j = 0; j < missing.length; j++) {
+          li += '<li>Missing slice <a href="' + missing[j][1] + '" onClick="changeBg(\'' + missing[j][1] + '\')" target="_blank">' + missing[j][0].replace('_png', '') + '</a></li>';
+        }
+        document.getElementById('missing').innerHTML = li;
+        document.getElementById('finding').innerHTML = finding.length;
+      }
+    }
+  }
+
+  function changeBg(url) {
+    document.getElementById('messages').setAttribute('style', 'display:block;background:white url(' + url + ') right no-repeat');
+  }
+
+  function showMessage() {
+    document.getElementById('messages').setAttribute('style', 'display:block;')
+  }
+
+  function hideMessage() {
+    document.getElementById('messages').setAttribute('style', 'display:none;')
+  }
+
+</script>

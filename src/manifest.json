@@ -16,6 +16,13 @@
       "handler" : "uploadSelect"
     },
     {
+      "name": "One Key Upload",
+      "identifier": "snaptchAll",
+      "shortcut": "ctrl command o",
+      "script": "./snatch.js",
+      "handler" : "uploadAll"
+    },
+    {
       "script" : "./snatch.js",
       "handler" : "setting",
       "name" : "Set Server URL",
@@ -24,10 +31,6 @@
   ],
   "menu": {
     "title": "Snatch",
-    "items": [
-      "snaptchSelect",
-      "-",
-      "serverUrl"
-    ]
+    "items": ["snaptchSelect", "snaptchAll", "-", "serverUrl"]
   }
 }

@@ -25,5 +25,8 @@
   "devDependencies": {
     "@skpm/builder": "^0.5.11"
   },
-  "author": "Zhicheng Chen <czc555@gmail.com>"
+  "author": "Zhicheng Chen <czc555@gmail.com>",
+  "dependencies": {
+    "sketch-module-web-view": "^3.0.7"
+  }
 }
