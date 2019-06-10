@@ -3,7 +3,7 @@
   "name": "Snatch",
   "description": "Snatch, upload layer to cdn directly, improve work efficiency.",
   "author": "chenzhicheng.com",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "identifier": "com.chenzhicheng.snatch",
   "bundleVersion": 1,
   "icon": "icon.png",

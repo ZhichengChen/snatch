@@ -6,15 +6,15 @@
     <description>Sketch plugin which upload layer to CDN directly.</description>
     <language>en</language>
     <item>
-      <title>Version 0.1.0</title>
+      <title>Version 1.1.0</title>
       <description>
         <![CDATA[
             <ul>
-              <li>First version v0.1.0</li>
+              <li>Multiple Upload Feature v1.1.0</li>
             </ul>
           ]]>
       </description>
-      <enclosure url="https://github.com/ZhichengChen/snatch/releases/download/0.1.0/snatch.sketchplugin.zip" sparkle:version="0.1.0"/>
+      <enclosure url="https://github.com/ZhichengChen/snatch/releases/download/1.1.0/snatch.sketchplugin.zip" sparkle:version="1.1.0"/>
     </item>
   </channel>
 </rss>
